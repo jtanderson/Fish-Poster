@@ -55,23 +55,36 @@
             % ---------------------------------------------------------%
             % fill each column with content            
             \begin{block}{Introduction}
-              The goal is to extract and classify fish data from natural underwater video data.  To do this, we use automatic thresholding methods to segment the image and the segmented fish are interpreted by either a system of neural networks or feature extraction algorithms.  We study the performance of different threshold methods and the accuracy of various neural network structures.  WARP methods and Gabor filters are used as classification 
+              The goal is to extract and classify fish data from natural underwater video data.  To do this, we use automatic thresholding methods to segment the image and the segmented fish are interpreted by either a system of neural networks or feature extraction algorithms.  We study the performance of different threshold methods and the accuracy of various neural network structures.  WARP methods and Gabor filters are used as classification tools alongside the neural networks.
             \end{block}
             \vfill
             \begin{block}{Feature Extraction}
-              \includegraphics[width=.95\linewidth]{figures/process}
+              \centering
+              \includegraphics[width=.8\linewidth]{figures/process}
             \end{block}
             \vfill
-            \begin{block}{Feature Extraction}
-              blah blah blah
-            \end{block}
-            \vfill
-            \begin{block}{Feature Description}
-              blah blah blah
-            \end{block}
-            \vfill
-            \begin{block}{Feature Matching}
-              blah blah blah
+            \begin{block}{Thresholding Methods}
+              \begin{itemize}
+              	\item Histogram
+			\begin{itemize}
+				\item Otsu / Liao \emph{et al}. - maximizes class variance (Liao \emph{et al}. improve performance)
+				\item Ramesh \emph{et al}. - minimize either sum of square error or sum of variance
+			\end{itemize}
+		\item Clustering
+			\begin{itemize}
+				\item Kittler and Illingworth - minimize a Gaussian-based criterion
+			\end{itemize}
+		\item Entropy
+			\begin{itemize}
+				\item Guo - maximize standard shannon entropy
+				\item Ajlan - maximize cross-entropy of gamma distribution
+				\item Xiao - calculate Gaussian entropy of two-dimensional gray level spatial correlation histogram
+			\end{itemize}
+		\item Graph Cut
+			\begin{itemize}
+				\item Tao - minimize naturalized cut with optimized method
+			\end{itemize}
+              \end{itemize}
             \end{block}
           }
         \end{minipage}
