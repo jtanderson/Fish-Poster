@@ -2,6 +2,7 @@
 \mode<presentation>{\usetheme{I6pd2}}
 \usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
+\usepackage{subfig}
 \usepackage{amsmath,amsthm, amssymb, latexsym}
 %\usepackage{times}\usefonttheme{professionalfonts}  % obsolete
 \usefonttheme[onlymath]{serif}
@@ -61,6 +62,16 @@
             \begin{block}{Data Flow Diagram}
               \centering
               \includegraphics[width=.95\linewidth]{figures/process2}
+            \end{block}
+            \vfill
+            \begin{block}{Sample Image Data}
+              \centering
+              \begin{figure}
+                \centering
+                \caption{An original image with the detected fish}
+                \subfloat[An original fish image]{\label{fig:originalimage}\includegraphics[scale=0.25]{figures/fishoriginal} } \quad
+                \subfloat[Fish detected by Tao graph cut algorithm]{\includegraphics[scale=0.5]{figures/threshdemo2tao}}
+              \end{figure}
             \end{block}
             \vfill
             \begin{block}{Thresholding Methods}
@@ -133,24 +144,18 @@
               \end{itemize}              
             \end{block}
             \vfill
-            \begin{block}{Some other thing}
-              blah blah blah
-
-              blah blah blah
-
-              blah blah blah
-
-              blah blah blah
-
-              blah blah blah
-
-              blah blah blah
-
-              blah blah blah
-
-              blah blah blah
-
-              blah blah blah
+            \begin{block}{Segmentation of \ref{fig:originalimage}}
+             \begin{figure}
+               \centering
+               \caption{FIsh segments with and without edge thinning}
+               \subfloat[Kitter's method without thinning]{ \includegraphics[scale=1]{figures/subdemokittler} }
+               \subfloat[Tao's method without thinning]{ \includegraphics[scale=1]{figures/subdemotao} }
+               \subfloat[Xiao's method without thinning]{ \includegraphics[scale=1]{figures/subdemoxiao} }
+               
+               \subfloat[Kitter's method with thinning]{ \includegraphics[scale=1]{figures/subdemokittlerthin} }
+               \subfloat[Tao's method with thinning]{ \includegraphics[scale=1]{figures/subdemotaothin} }
+               \subfloat[Xiao's method with thinning]{ \includegraphics[scale=1]{figures/subdemoxiaothin} }
+             \end{figure}
             \end{block}
           }
         \end{minipage}
