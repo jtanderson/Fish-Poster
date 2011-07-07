@@ -8,6 +8,7 @@
 \usefonttheme[onlymath]{serif}
 \boldmath
 \usepackage[orientation=landscape,size=a0,scale=1.4,grid]{beamerposter}
+\usepackage{natbib}
 % change list indention level
 %\setdefaultleftmargin{3em}{}{}{}{}{}
 
@@ -156,6 +157,7 @@
                \subfloat[Tao's method with thinning]{ \includegraphics[scale=1.1]{figures/subdemotaothin} }
                \subfloat[Xiao's method with thinning]{ \includegraphics[scale=1.1]{figures/subdemoxiaothin} }
              \end{figure}
+             
             \end{block}
           }
         \end{minipage}
@@ -190,24 +192,10 @@
               \end{itemize}              
             \end{block}
             \vfill
-            \begin{block}{Some other thing}
-              blah blah blah
-
-              blah blah blah
-
-              blah blah blah
-
-              blah blah blah
-
-              blah blah blah
-
-              blah blah blah
-
-              blah blah blah
-
-              blah blah blah
-
-              blah blah blah
+            \begin{block}{References}
+             \def\newblock{}\small
+	    \bibliographystyle{plain}
+  	    \bibliography{ImageProcessingBib}
             \end{block}
           }
         \end{minipage}
