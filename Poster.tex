@@ -13,6 +13,7 @@
 %\setdefaultleftmargin{3em}{}{}{}{}{}
 
 \usepackage{snapshot} % will write a .dep file with all dependencies, allows for easy bundling
+\usepackage{epstopdf}
 
 \listfiles
 
@@ -175,21 +176,54 @@
             % Since all columns are the same length, it is all nice and tidy.  You have to get the height empirically
             % ---------------------------------------------------------%
             % fill each column with content
-            
-            \begin{block}{Motivation}
-              blah blah blah
-            \end{block}
-            \vfill
-            \begin{block}{Some other thing}
-              blah blah blah
-            \end{block}
-            \vfill
-            \begin{block}{Some other thing}
+            \begin{block}{Deep Belief Network}
+                \begin{figure}[htbp]
+                   \centering
+                   \subfloat[RBM Architecture]{\includegraphics[height=5\baselineskip]{rbmarch}} % requires the graphicx package
+                   \quad
+                   \subfloat[DBN Architecture]{\includegraphics[height=5\baselineskip]{dbnarch}}
+                   \label{fig:}
+                \end{figure}
               \begin{itemize}
-              \item blah
-              \item blah
-              \item blah
+                  \item Learns a representation of input data
+                  \item Might be able to reduce input noise and recover missing
+                  data (due to obstructions or segmentation errors)
+                  \item Each layer is a Restricted Boltzmann Machines
+                  \item Can be efficiently trained by a greedy layer-by-layer
+                  algorithm
               \end{itemize}              
+            \end{block}
+            \begin{block}{Convolutional Neural Network}
+            \begin{figure}[htbp]
+               \centering
+               \includegraphics[height=5\baselineskip]{cnnarch} % requires the graphicx package
+               \caption{CNN Architecture}
+            \end{figure}
+            \begin{itemize}
+                \item Powerful architecture for image classification
+                \item Preserves spatial information when extracting features
+                \item High connectivity
+                \item Efficient weight sharing
+            \end{itemize}
+            \end{block}
+            \vfill
+            \begin{block}{Classification Results}
+              DBN
+              \begin{itemize}
+                \item Poor performance
+                \item Model gets stuck at the local mimimum of an average of all
+                inputs
+                \item Different parameters and longer training might improve
+                results
+              \end{itemize}
+             \bigskip
+             CNN
+             \begin{itemize}
+                \item Good performance
+                \item 88\% accuracy (74/84)
+                \item Different architecture parameters may improve results
+                further
+             \end{itemize}
             \end{block}
             \vfill
             \begin{block}{References}
