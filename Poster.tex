@@ -135,21 +135,21 @@
             \vfill
             \begin{block}{Gabor Filters for Different Fish Species}
               \centering
-              \includegraphics[width=.95\linewidth,scale = .6,clip=true,trim=0 100 0 100]{figures/Gabor}
+              \includegraphics[width=.95\linewidth]{figures/Gabor}
             \end{block}
             \vfill
             \begin{block}{Gabor Filters}
               \begin{itemize}
-              \item Identify E. morio based on stripe on tail
+              \item Identify E.~morio based on stripe on tail
               \item Ratio of horizontal and and vertical Gabor filters highlights stripe
-              \item Presence of stripe indicates E. morio, process had 
+              \item Presence of stripe indicates E.~morio, process had 
               \end{itemize}              
             \end{block}
             \vfill
             \begin{block}{Segmentation of \ref{fig:originalimage}}
              \begin{figure}
                \centering
-               \caption{FIsh segments with and without edge thinning}
+               \caption{Fish segments with and without edge thinning}
                \subfloat[Kitter's method without thinning]{ \includegraphics[scale=1.1]{figures/subdemokittler} }
                \subfloat[Tao's method without thinning]{ \includegraphics[scale=1.1]{figures/subdemotao} }
                \subfloat[Xiao's method without thinning]{ \includegraphics[scale=1.1]{figures/subdemoxiao} }
@@ -179,52 +179,55 @@
             \begin{block}{Deep Belief Network}
                 \begin{figure}[htbp]
                    \centering
-                   \subfloat[RBM Architecture]{\includegraphics[height=5\baselineskip]{rbmarch}} % requires the graphicx package
+                   \subfloat[RBM Architecture]{\includegraphics[height=4\baselineskip]{rbmarch}} % requires the graphicx package
                    \quad
-                   \subfloat[DBN Architecture]{\includegraphics[height=5\baselineskip]{dbnarch}}
+                   \subfloat[DBN Architecture]{\includegraphics[height=4\baselineskip]{dbnarch}}
                    \label{fig:}
                 \end{figure}
-              \begin{itemize}
-                  \item Learns a representation of input data
-                  \item Might be able to reduce input noise and recover missing
-                  data (due to obstructions or segmentation errors)
-                  \item Each layer is a Restricted Boltzmann Machines
-                  \item Can be efficiently trained by a greedy layer-by-layer
-                  algorithm
-              \end{itemize}              
+                \begin{columns}
+                    \column{0.48\textwidth}
+                      \begin{itemize}
+                      \item Learns to model input data 
+                      \item Might be
+                      able to reduce input noise and recover missing data (due
+                      to obstructions or segmentation errors)
+                      \end{itemize}              
+                    \column{0.48\textwidth}
+                      \begin{itemize}
+                      \item Each layer is a Restricted Boltzmann Machines \item
+                      Can be efficiently trained by a greedy layer-by-layer
+                      algorithm
+                      \end{itemize}              
+                \end{columns}
             \end{block}
             \vfill
             \begin{block}{Convolutional Neural Network}
             \begin{figure}[htbp]
                \centering
-               \includegraphics[height=5\baselineskip]{cnnarch} % requires the graphicx package
+               \includegraphics[height=4\baselineskip]{cnnarch} % requires the graphicx package
                \caption{CNN Architecture}
             \end{figure}
-            \begin{itemize}
+            \begin{columns}
+                \column{0.48\textwidth}
+                \begin{itemize}
                 \item Powerful architecture for image classification
-                \item Preserves spatial information when extracting features
                 \item High connectivity
+                \end{itemize}
+                \column{0.48\textwidth}
+                \begin{itemize}
                 \item Efficient weight sharing
-            \end{itemize}
+                \item Preserves spatial information when extracting features
+                \end{itemize}
+            \end{columns}
             \end{block}
             \vfill
             \begin{block}{Classification Results}
-              DBN
-              \begin{itemize}
-                \item Poor performance
-                \item Model gets stuck at the local mimimum of an average of all
-                inputs
-                \item Different parameters and longer training might improve
-                results
-              \end{itemize}
-             \bigskip
-             CNN
-             \begin{itemize}
-                \item Good performance
-                \item 88\% accuracy (74/84)
-                \item Different architecture parameters may improve results
-                further
-             \end{itemize}
+             Classifying {\it e.~morio} with 
+             34 training images, 84 testing
+
+             DBN and CNN: 98\% accuracy (82/84)
+
+             CNN Only: 
             \end{block}
             \vfill
             \begin{block}{References}
