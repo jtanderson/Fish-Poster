@@ -1,5 +1,13 @@
 \documentclass[final]{beamer}
 \mode<presentation>{\usetheme{I6pd2}}
+
+
+%\usecaptiontemplate{
+%	\small
+%	\structure{\insertcaptionname~\insertcaptionnumber:}
+%	\insertcaption
+%}
+
 \usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage{subfig}
@@ -15,12 +23,13 @@
 \usepackage{snapshot} % will write a .dep file with all dependencies, allows for easy bundling
 \usepackage{epstopdf}
 
+
 \listfiles
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \graphicspath{{figures/}}
  
-\title{\huge REU Fish Tracking Project}
+\title{\huge Fish Classification in Underwater Video}
 %\subtitle{Presentation Subtitle} % (optional)
 
 %% author and in []: shortauthor
@@ -73,6 +82,7 @@
                 \caption{An original image with the detected fish}
                 \subfloat[An original fish image]{\label{fig:originalimage}\includegraphics[scale=0.25]{figures/fishoriginal} } \quad
                 \subfloat[Fish detected by Tao graph cut algorithm]{\includegraphics[scale=0.5]{figures/threshdemo2tao}}
+                \label{fig:origdata}
               \end{figure}
             \end{block}
             \vfill
@@ -118,8 +128,8 @@
             
             \begin{block}{WARP}
 	      \begin{itemize}
-              \item Makes use of Duscrete Fourier Transforms (DFT) for reduced dimensionality.
-	      \item Modifies DFT coefficents to retain phase, magnitude, and starting point information.
+              \item Makes use of Discrete Fourier Transforms (DFT) for reduced dimensionality.
+	      \item Modifies DFT coefficients to retain phase, magnitude, and starting point information.
 	      \item Dynamic Time Warping (DTW) used to calculate distance, allows for deformities in image shape.
 	      \item Sakoe-Chiba band is used to make DTW computations much quicker.
 	      \end{itemize}
@@ -129,7 +139,7 @@
               \begin{itemize}
 	      \item Euclidian Distance Comparison: 21.2\% recognition rate
               \item WARP Direct Image Comparison: 53.2\% recognition rate
-              \item WARP Average Distance Compariosn: 86.4\% recogniton rate
+              \item WARP Average Distance Comparison: 86.4\% recognition rate
               \end{itemize}              
             \end{block}
             \vfill
@@ -142,7 +152,7 @@
               \begin{itemize}
               \item Identify E.~morio based on stripe on tail
               \item Ratio of horizontal and and vertical Gabor filters highlights stripe
-              \item Presence of stripe indicates E.~morio, process had 
+              \item Presence of stripe indicates E.~morio, process had 90.7\% recognition rate
               \end{itemize}              
             \end{block}
             \vfill
